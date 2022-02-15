@@ -1,0 +1,152 @@
+@font-face {
+    font-family: "AnonymousPro";
+    src: url(anonymousPro-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "AnonymousPro";
+    src: url(anonymousPro-Bold.ttf) format("truetype");
+    font-weight: 700;
+}
+
+main {
+    padding-top: 2rem;
+}
+
+.background {
+    background: url("../images/plans-background.jpg") center/cover;
+    filter: grayscale(100%);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+}
+
+.free {
+    background: rgba(234, 252, 237, 0.95);
+    float: right;
+    border-right: none;
+    border-left: 4px solid #0e4f1f;
+    text-align: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+.plan-overview-free {
+    background: #b9d8b2;
+}
+
+.plan-overview-plus {
+    background: rgb(101, 170, 135);
+}
+
+.plan-overview-premium {
+    background: rgb(17, 51, 32);
+}
+
+.plan-overview-free,
+.plan-overview-plus,
+.plan-overview-premium {
+    border: 3px solid black;
+    margin: 0.625rem 0 0.625rem 0;
+    padding: 1.5625rem;
+    width: 80%;
+    position: relative;
+    overflow: hidden;
+}
+
+.plan-overview-free:hover,
+.plan-overview-plus:hover,
+.plan-overview-premium:hover,
+.plan-overview-free:active,
+.plan-overview-plus:active,
+.plan-overview-premium:active {
+    border: 3px solid red;
+    cursor: pointer;
+    animation: push-up 1s ease-out forwards;
+}
+
+.plan-overview-free-link,
+.plan-overview-plus-link,
+.plan-overview-premium-link {
+    text-decoration: none;
+    font-family: 'Titillium Web',
+        sans-serif;
+}
+
+.plan {
+    color: black;
+}
+
+.plan,
+.plan-premium {
+    font-size: 1.25rem;
+}
+
+.plan-premium {
+    color: white;
+}
+
+.plan-description {
+    color: grey;
+    font-size: 1.0625rem;
+}
+
+.plan-benefit {
+    color: black;
+    background: white;
+    padding: 0.625rem;
+    border: 2px solid black;
+    font: 1.2rem;
+    /*font-style font-variant font-weight font-size/line-height font-family*/
+}
+
+.package__badge {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    margin: 0;
+    font-size: 0.75rem;
+    color: white;
+    background:#ff5454;
+    padding: 0.5rem;
+    z-index: 10;
+    transform: rotateZ(45deg) translateX(3.5rem) translateY(-1rem);
+    transform-origin: center;
+    width: 12rem;
+    text-align: center;
+}
+
+@media (min-width: 40rem) {
+    main {
+        max-width: 1500px;
+    }
+}
+
+@media (min-width: 1500px) {
+    .plan-overview-free,
+    .plan-overview-plus,
+    .plan-overview-premium { 
+        border-left: 4px solid #0e4f1f;
+    }
+    .plan-overview-free:hover,
+    .plan-overview-free:active {
+        border-right-color: red;
+    }
+}
+
+@keyframes push-up {
+    0% {
+        transform: translateY(0);
+    }
+
+    33% {
+        transform: translateY(-1.5rem);
+    }
+
+    100% {
+        transform: translateY(-1rem);
+    }
+}
